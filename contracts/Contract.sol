@@ -19,7 +19,7 @@ contract ZombieFactory{ // create a contract
     NewZombie(id,_name,_dna);
   }
   //view does not change state but can read states, cost no gas
-  function _generateRandomDna(string _str) privateview returns (uint){ //create a private view function
+  function _generateRandomDna(string _str) private view returns (uint){ //create a private view function
     uint rand = uint(keccak256(_str));//hash _str and convert is to uint
     return rand % dnaModulus;
   }
